@@ -1,0 +1,24 @@
+# app
+*.log
+/.kivy/
+/config/user.ini
+/datasets/*
+/models/.cache/
+/models/downloaded/*
+
+# python
+__pycache__/
+
+# pyinstaller
+build/
+dist/
+*.spec
+
+# editor, ide
+.vscode/
+
+# misc
+.backup/
+MEMO.md
+
+!.gitkeep

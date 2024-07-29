@@ -1,0 +1,47 @@
+#:kivy 2.1.0
+
+<MainView>:
+    video_container: video_container
+    keypoints_button: keypoints_button
+    toggle_stretch_button: toggle_stretch_button
+    save_keypoints_button: save_keypoints_button
+
+    VideoContainer:
+        id: video_container
+        size: root.size
+        allow_stretch: True
+
+    StackLayout:
+        ## Background color
+        # canvas.before:
+        #     Color:
+        #         rgba: 0, 1, 0, 1
+        #     Rectangle:
+        #         pos: self.pos
+        #         size: self.size
+
+        orientation: "rl-bt"
+        size_hint: None, None
+        size: root.width, "50dp"
+
+        spacing: "10dp"
+        padding: "10dp"
+
+        Button:
+            id: keypoints_button
+            text: "Hide Keypoints"
+            size_hint: 0.25, None
+            on_release: root.toggle_keypoints()
+
+        Button:
+            id: toggle_stretch_button
+            text: "Stop Stretch"
+            size_hint: 0.25, None
+            on_release: root.toggle_stretch()
+
+        # Hidden by default (Search "enable_save_keypoints_button")
+        Button:
+            id: save_keypoints_button
+            text: "Save Keypoints"
+            size_hint: 0.25, None
+            on_release: root.save_keypoints()
